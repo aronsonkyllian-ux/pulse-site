@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050608">
+<meta name="color-scheme" content="dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PULSE">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>PULSE · Trading Floor</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css?v=bz10">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo-sq"><canvas id="logoA" width="16" height="16"></canvas></span>
+    <span class="x">×</span>
+    <span class="logo-sq white"><canvas id="logoB" width="16" height="16"></canvas></span>
+    <b>PULSE</b><span class="x">×</span><b>VORTEX</b>
+  </div>
+  <div class="meta">
+    <span class="hm">DAY <b id="mDay">–</b></span>
+    <span class="hm">TRADES <b id="mTrades">–</b></span>
+    <span class="hm">WALLETS <b id="mWallets">–</b></span>
+    <span class="hm">STARS <b id="mStars">–</b></span>
+    <span id="mAlert" class="alert-pill hidden">⚠ WIN RATE</span>
+    <span class="live"><i id="mDot" class="dot"></i><b id="mOnline">ONLINE</b></span>
+    <span id="mUpd" class="upd">LAST UPDATE –</span>
+    <button id="snd" class="snd" title="Son des gains">♪ OFF</button>
+  </div>
+</header>
+
+<main class="grid">
+  <section class="left">
+    <div class="alertbar hidden" id="alertBar"></div>
+    <div class="cards">
+      <div class="card"><div class="lbl">CURRENT BALANCE</div><div class="big" id="cBal">–</div><div class="sub" id="cBalSub">–</div></div>
+      <div class="card hl"><div class="lbl">TOTAL P&amp;L</div><div class="big" id="cPnl">–</div><div class="sub g" id="cPnlSub">–</div></div>
+      <div class="card" id="cardToday"><div class="lbl">TODAY WIN RATE</div><div class="big" id="cToday">–</div><div class="sub" id="cTodaySub">–</div><div class="days" id="cDays"></div></div>
+      <div class="card hl" id="cardBest"><div class="lbl">BEST TRADE</div><div class="big" id="cBest">—</div><div class="sub" id="cBestSub">–</div></div>
+    </div>
+    <div class="panel chart">
+      <div class="ph"><span class="t"><i class="dia"></i>BALANCE HISTORY</span></div>
+      <div class="chartbox"><canvas id="eq"></canvas></div>
+    </div>
+    <div class="panel log">
+      <div class="ph"><span class="t"><i class="dia"></i>ACTIVITY LOG</span><span class="r" id="resolved">–</span></div>
+      <div id="logRows"></div>
+    </div>
+  </section>
+
+  <section class="right">
+    <div class="panel floor">
+      <div class="ph"><span class="t"><i class="dia"></i>THE PULSE FLOOR</span><span class="r" id="floorMeta">–</span></div>
+      <div class="stage" id="stage">
+        <canvas id="room" width="480" height="300"></canvas>
+        <div class="ticker" style="left:26.8%;top:7.0%;width:58%"><div id="tick"></div></div>
+                <div class="ov scr-h" id="scrH" style="left:27.4%;top:10.3%;width:57%"></div>
+        <div class="ov scr-f" id="scrF" style="left:26.8%;top:31.8%;width:58%"></div>
+        <div class="coins" id="coins" style="right:1.5%;top:2.5%"></div>
+        <div class="ov clock" id="clock" style="display:none">--:--</div>
+                <div class="ov board" id="board" style="display:none"></div>
+        <div class="ov tag" style="left:81%;top:61%">HEAD OF THE FLOOR</div>
+        <div class="ov tag" style="left:80.8%;top:72.8%" id="topRun">TOP RUNNER</div>
+                        <div id="sprites"></div>
+      </div>
+    </div>
+    <div class="agents" id="agents"></div>
+    <div class="info hidden" id="info"></div>
+  </section>
+</main>
+<script src="app.js?v=bz10"></script>
+</body>
+</html>
